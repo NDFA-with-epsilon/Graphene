@@ -1,1 +1,1 @@
-![alt text](https://github.com/[NDFA-with-epsilon]/[Graphene]/blob/[main]/memefin.jpg?raw=true)
+![alt text]([http://url/to/img.png](https://imgflip.com/i/6vl67c))
