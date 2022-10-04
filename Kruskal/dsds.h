@@ -58,6 +58,7 @@ node* make_set_tmp(vertex_t* obj)
     ptr->tail_ptr = ptr->head_ptr;
 
     ptr->head_ptr->head_node = ptr;
+    ptr->list_length = 1;
     printf("\nSet initialized");
     return ptr;
 }
