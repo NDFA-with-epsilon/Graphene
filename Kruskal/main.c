@@ -1,7 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "dsds.h"
-#include "sort.h"
 
 adj_list* init_adj_list(/* vertex count */)
 {
