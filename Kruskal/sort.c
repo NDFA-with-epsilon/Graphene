@@ -1,4 +1,4 @@
-#include "msort_tmp.h"
+#include "sort.h"
 
 int merge_stub(adj_list* g_list, int vertex)
 {
