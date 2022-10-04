@@ -10,7 +10,7 @@
 
 /* first attempt: linked list implementation  */
 /* 
-    - what will be stored in each node_t ? -> done 
+    - what will be stored in each set_t_t ? -> done 
     - how to represent an 'edge' and its weight ? -> done using adjacency list, "graph.h"
 */
 
@@ -19,21 +19,21 @@
 
 typedef struct vertex_list
 {
-    node_t* head_node_t;
+    set_t* head_set;
     int vertex;
-    node_t* next;
+    set_t* next;
 }vertex_t;
 
-typedef struct _node
+typedef struct _set
 {
     vertex_t* head_ptr;
     vertex_t* tail_ptr;
 
     int list_length; /*for linked list impl's weighted-union heuristics */  
-}node_t;
+}set_t;
 
-node_t* make_set(int vertex);
-node_t* make_set_tmp(vertex_t* obj);
+set_t* make_set(int vertex);
+set_t* make_set_tmp(vertex_t* obj);
 vertex_t* make_vertex(int vertex);
 vertex_t* find_set(vertex_t* obj);
 
