@@ -17,6 +17,6 @@ typedef struct list
     int weight;
 }list;
 
-adj_list* init_adj_list(/* for now its a global variable V, but otherwise put vertex count here */);
+void init_adj_list(/* for now its a global variable V, but otherwise put vertex count here */);
 int sort(adj_list* g_list, int vertex); /* --> stub function in sort.h */ 
 #endif
