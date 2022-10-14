@@ -1,38 +1,20 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include "dsds.h"
+#include "disjoint_set.h"
 
-adj_list* init_adj_list(/* vertex count */)
+int main(void)
 {
-    adj_list* graph = malloc(sizeof(adj_list) * V);
+    adj_list* g_list = init_adj_list();
 
-    for(int i = 0; i < V; i++) /* initializes the adj list */
-    {
-        graph[i].vertex_index = i+1; //V_1, V_2, ...
-        graph[i].edge_count = V - (i+1);
-        if(i == V - 1)
-            {
-                graph[i].head = NULL;
-                graph[i].tail = NULL;
-                break;
-            }
-        graph[i].head = malloc(sizeof(list) * graph[i].edge_count);
-        graph[i].tail = graph[i].head;
-    }
-
+    set_t* set_buf[V];
     for(int i = 0; i < V; i++)
     {
-        for(int j = 0; j < graph[i].edge_count; j++)
-        {
-            graph[i].head[j].vertex = graph[i].vertex_index + j + 1;
-            graph[i].head[j].weight = 1 + rand() % 10;
-            graph[i].head[j].primary_vertex = &graph[i];
-
-            if(j == graph[i].edge_count - 1)
-                {
-                    graph[i].tail = &graph[i].head[j];
-                }
-        }
+        set_buf[i] = make_set(i+1); /* disjoint sets */
     }
-    return graph;
+
+    /* 
+        make_set_tmp() and make_vertex() require extra space for storing vertex_t* and also involves unnecessary indirections i think
+     */
+
+
 }

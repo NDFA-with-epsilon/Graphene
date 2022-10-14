@@ -1,6 +1,6 @@
-#include "sort.h"
+#include "m_sort.h"
 
-int merge_stub(adj_list* g_list, int vertex)
+int sort(adj_list* g_list, int vertex)
 {
 	if(!g_list)
 	{

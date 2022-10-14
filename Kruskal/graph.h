@@ -13,11 +13,10 @@ typedef struct adj_list
 
 typedef struct list
 {
-	int vertex;
+	int vertex_index;
     int weight;
-	struct adj_list* primary_vertex;
 }list;
 
 adj_list* init_adj_list(/* for now its a global variable V, but otherwise put vertex count here */);
-void sort_list(adj_list*); /* yet to be designed -> modify sort.h's mergesort impl */ 
+int sort(adj_list* g_list, int vertex); /* --> stub function in sort.h */ 
 #endif

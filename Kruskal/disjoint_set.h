@@ -22,7 +22,7 @@ typedef struct vertex_list
     set_t* head_set;
     int vertex;
     set_t* next;
-}vertex_t;
+}vertex_t; /* 'list' earlier */
 
 typedef struct _set
 {
@@ -30,7 +30,7 @@ typedef struct _set
     vertex_t* tail_ptr;
 
     int list_length; /*for linked list impl's weighted-union heuristics */  
-}set_t;
+}set_t; /* 'node' earlier */
 
 set_t* make_set(int vertex);
 set_t* make_set_tmp(vertex_t* obj);
@@ -40,7 +40,6 @@ vertex_t* find_set(vertex_t* obj);
 /* 
     sets themselves are not linked via list, its elements are. Sets can be stored together in an array 
 */
-
 
 /* see if its possible to make a set_of(int vertex) macro to return the set object containing the given vertex, just like linux kernel's container_of() macro */
 
