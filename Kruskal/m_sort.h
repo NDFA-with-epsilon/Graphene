@@ -4,6 +4,7 @@
 
 #include "graph.h"
 #include <math.h>
+#include <assert.h>
 
 #define INVALID_PARAM -1
 #define SUCCESS 1
