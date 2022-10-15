@@ -1,15 +1,20 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include "graph.h"
+#include "m_sort.h"
 #include "disjoint_set.h"
+
+mat_adj[V] = {0};
 
 int main(void)
 {
-    adj_list* g_list = init_adj_list();
-
-    set_t* set_buf[V];
+    init_adj_list(mat_adj);
+    SORT(mat_adj);
+    
+    set_t* set[V] = {0};
     for(int i = 0; i < V; i++)
     {
-        set_buf[i] = make_set(i+1); /* disjoint sets */
+        set[i] = make_set(i+1); /* disjoint sets */
     }
 
     /* 
