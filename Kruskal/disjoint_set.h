@@ -17,25 +17,27 @@
 #define V 5
 #include "graph.h"
 
-typedef struct vertex_list
-{
-    set_t* head_set;
-    int vertex;
-    set_t* next;
-}vertex_t; /* 'list' earlier */
+// typedef struct vertex_list
+// {
+//     set_t* head_set;
+//     int vertex;
+//     set_t* next;
+// }vertex_t; /* 'list' earlier */
 
-typedef struct _set
+typedef struct set
 {
-    vertex_t* head_ptr;
-    vertex_t* tail_ptr;
+    // vertex_t* head_ptr;
+    // vertex_t* tail_ptr;
 
-    int list_length; /*for linked list impl's weighted-union heuristics */  
+    adj_list* head_ptr;
+    adj_list* tail_ptr;
+    int list_len; /*for linked list impl's weighted-union heuristics */  
 }set_t; /* 'node' earlier */
 
+set_t* set_buf;
+
 set_t* make_set(int vertex);
-set_t* make_set_tmp(vertex_t* obj);
-vertex_t* make_vertex(int vertex);
-vertex_t* find_set(vertex_t* obj);
+set_t* find_set(int vertex); /* Must be O(1). Also, make it inline or nah ? */
 
 /* 
     sets themselves are not linked via list, its elements are. Sets can be stored together in an array 
