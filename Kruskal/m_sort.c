@@ -1,18 +1,6 @@
 #include "m_sort.h"
 
-int sort(adj_list* g_list, int vertex)
-{
-	if(!g_list)
-	{
-		return INVALID_PARAM;
-	}
-
-	sort_list(g_list, vertex, 0, g_list[vertex - 1].edge_count - 1);
-	return SUCCESS;
-}
-
-
-void sort_list(adj_list* g_list, int vertex, int l, int r)
+int sort_list(adj_list* g_list, int vertex, int l, int r)
 {
 	if(l >= r)
 	{
@@ -25,6 +13,7 @@ void sort_list(adj_list* g_list, int vertex, int l, int r)
 	sort_list(g_list, vertex, mid + 1, r);
 
 	merge(g_list, vertex, l, mid, r);
+	return SUCCESS;
 }
 
 void merge(adj_list* g_list, int vertex, int l, int mid, int r)
